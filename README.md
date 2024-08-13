@@ -66,7 +66,7 @@ Place these files in the same directory as the script, or update the paths in th
 Execute the script to merge the PDF files:
 
 ```bash
-python merge_pdfs.py
+python merge_pdfs.py tmp/front_pages.pdf tmp/back_pages_reversed.pdf tmp/merged_document.pdf
 ```
 
 The script will output a new PDF file named `tmp/merged_document.pdf` with the pages interleaved correctly.
