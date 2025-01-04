@@ -2,7 +2,7 @@
 
 `pyneverduplex` is a Python script that merges two PDF files into a single PDF document. It is designed to merge PDF files that represent the front pages and back pages (reversed) of a stack of double-sided documents fed into a non-duplex scanner, compensating for the lack of duplexness and interleaving the pages into the correct order.
 
-> back pages are reversed because when feeding the scanner it's easier to just flip the entire stack around to the back pages 🔁 instead of flipping each individual page to preserve the order
+> back pages are reversed because when feeding the scanner it's easier to just flip the entire stack around (along the long side) to the back pages 🔁 instead of flipping each individual page to preserve the order
 
 ## Prerequisites
 
@@ -70,6 +70,18 @@ python merge_pdfs.py tmp/front_pages.pdf tmp/back_pages_reversed.pdf tmp/merged_
 ```
 
 The script will output a new PDF file named `tmp/merged_document.pdf` with the pages interleaved correctly.
+
+Also for the sake of brevity:
+
+```bash
+python qmerge_pdfs.py tmp/some_pages.pdf
+```
+
+yields the equivalent to:
+
+```bash
+python merge_pdfs.py tmp/some_pages__f.pdf tmp/some_pages__br.pdf tmp/some_pages.pdf
+```
 
 ## Notes
 
